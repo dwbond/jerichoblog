@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block head_title %} {{ post.title }} {% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% load comments %}
+
+{% block content %}
+    {{ post.posted }}
+    <p>{{ post.body }}</p>
+
+    {% get_comment_list for post as comment_list %}
+    <h3>Comments</h3>
+    {%for comment in comment_list %}
+        <div id="comment_{{ comment.id }}">
+            <p>{{ comment.comment }}</p>
+            <small>{{ comment.name }}</small>
+        </div>
+    {% empty %}
+        <p>It's pretty quiet here... be the first to comment!</p>
+    {% endfor %}
+
+    {% render_comment_form for post %}
+
+    {% comment %}
+
+    {% get_comment_form for post as form %}
+    <table>
+        <form action="{% comment_form_target %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit" value="Post">
+                    <input type="submit" name="preview" value="Preview">
+                </td>
+            </tr>
+        </form>
+    </table>
+
+    {% endcomment %}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<html lang="en">
+    <head>
+    <link href="/static/admin/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/boostrap.min.js"></script>
+        <title>
+        {% block head_title %}
+        
+        {% endblock %}
+        </title>
+    </head>
+    <body>
+
+    <div class = "container">
+    <div class = "row">
+
+        <div class = "span8">
+            <h1>
+            {% block blog_title %}
+            <a href="http://www.Jerichoblog.com/">Jerichoblog</a>
+            {% endblock %}
+            </h1>
+       
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        <div class = "span2">
+            {% block category %}
+       
+            {% endblock %}
+        </div>
+
+        <div class = "span2">
+            {% block sidebar %}
+
+            {% endblock %}
+        </div>
+
+    </div>
+    </div>
+    </body>
+</html>

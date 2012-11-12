@@ -1,0 +1,71 @@
+{%extends 'base.html' %}
+
+{# {%block head_title %} #}
+
+{% block sidebar %}
+    <h3>Monthly Archive</h3>
+    {% for month in months %}<br/>
+        {% ifchanged month.0 %} {{month.0}} <br/> {% endifchanged %} 
+        <a href="{% url blog.views.month month.0 month.1 %}">{{ month.2 }}</a>
+    {% endfor %}
+{% endblock %}
+
+{% block category %}
+    <h3>Categories</h3>
+    {% if categories %}
+        <ul>
+        {% for category in categories %}
+            <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no posts.</p>
+    {% endif %}
+{% endblock %}
+
+{% load comments %}
+
+{% block content %}
+    <div class= "main">
+    
+        <!-- Posts -->
+        {% if posts %}
+            <ul>
+            {% for post in posts.object_list %}
+                <li><a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a></li>
+                <ul>
+                    <div class= "time"> <h5>{{ post.posted }}</h5> </div>
+                    <div class= "body"> {{ post.body|linebreaks }} </div>
+                </ul>
+                {% get_comment_count for post as comment_count %}
+                <small>{{ comment_count }} comment{{ comment_count|pluralize }}</small>
+            {% endfor %}
+            </ul>
+
+        {% else %}
+            <p>There are no posts.</p>
+        {% endif %}
+        <!-- end Posts -->
+
+        <!-- Next/Previous -->
+        {% if posts.object_list and posts.paginator.num_pages > 1 %}
+        <div class = "pagination" style = "margin-top: 20 px; margin-left: 20px; ">
+            <span class = "step-links">
+                {% if posts.has_previous %}
+                    <a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a>
+                {% endif %}
+
+                <span class= "current">
+                    &nbsp;Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+                </span>
+
+                {% if posts.has_next %}
+                    <a href= "?page={{ posts.next_page_number }}"> &gt;&gt; older entries</a>
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+        <!-- end Nex/Previous -->
+
+    </div>
+{% endblock %}
