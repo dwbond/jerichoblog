@@ -6,7 +6,7 @@ from django.forms import ModelForm
 
 class Category(models.Model):
     title = models.CharField(max_length=100, db_index=True)
-    slug = models.SlugField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=50, db_index=True)
 
     def __unicode__(self):
         return '%s' % self.title
@@ -17,7 +17,7 @@ class Category(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
     #posts may have same title
     body = models.TextField()
     posted = models.DateField(db_index=True, auto_now_add=True)
