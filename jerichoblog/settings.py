@@ -156,3 +156,6 @@ LOGGING = {
         },
     }
 }
+
+import dj_database.url
+DATABASES['default'] = dj_database_url.config()
