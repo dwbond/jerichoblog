@@ -1,0 +1,48 @@
+a{
+    color: ForestGreen;
+}
+
+a:hover{
+    color: Green;
+}
+
+a:visited{
+    color: DarkGreen;
+}
+
+ul {
+list-style-type: none;
+}
+
+body { 
+    background: url(/static/admin/img/furley_bg.png) repeat;
+}
+
+h1 {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+}
+
+p, div{
+    font-family: 'Crimson Text', Georgia, Times, serif;
+    font-size: 16px;
+}
+
+.blog_title{
+    font-size: 50px;
+    line-height: 55px;
+}
+
+.post_title{
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.sorting_title{
+    font-size: 40px;
+    line-height: 45px;
+}
