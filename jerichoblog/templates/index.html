@@ -37,7 +37,7 @@
                 <li><a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a></li>
                 <ul>
                     <div class= "time"> <h4>{{ post.posted }}</h4> </div>
-                    {{ post.body }}
+                    {{ post.body|linebreaks }}
                 </ul>
                 {% get_comment_count for post as comment_count %}
                 <small>{{ comment_count }} comment{{ comment_count|pluralize }}</small>
