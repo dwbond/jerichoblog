@@ -8,24 +8,33 @@
     <script src="js/boostrap.min.js"></script>
         <title>
         {% block head_title %}
-        
+        Jerichoblog
         {% endblock %}
         </title>
     </head>
     <body>
 
     <div class = "container">
-              
+
     <div class = "row-fluid">
     <div class = "span12 content_background">
-    
+
+
+    <h1>
     {% block title %}
     <div class ="page-header blog_title"><a href="http://www.jerichoblog.com/"><b>Jerichoblog</b></a></div>
     {% endblock %}
-    
-        <div class = "row-fluid">
+    </h1>
 
-            <div class = "span8 content_space">
+        <div class = "row-fluid">
+             <div class = "span8 content_space">
+
+                <h1>
+                {% block blog_title %}
+    
+                {% endblock %}
+                </h1>
+
                 {% block content %}
 
                 {% endblock %}
@@ -37,12 +46,12 @@
                 {% endblock %}
 
                 {% block sidebar %}
-
+    
                 {% endblock %}
             </div>
 
         </div>
-        </div>
+    </div>
     </div>
     </div>
     </body>

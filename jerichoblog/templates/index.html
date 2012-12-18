@@ -4,10 +4,12 @@
 
 {% block sidebar %}
     <h3>Monthly Archive</h3>
-    {% for month in months %}<br/>
-        {% ifchanged month.0 %} {{month.0}} <br/> {% endifchanged %} 
+    <ul>
+    {% for month in months %} <br>
+        {% ifchanged month.0 %} {{month.0}} <br> {% endifchanged %} 
         <a href="{% url blog.views.month month.0 month.1 %}">{{ month.2 }}</a>
     {% endfor %}
+    </ul>
 {% endblock %}
 
 {% block category %}
