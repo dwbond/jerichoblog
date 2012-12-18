@@ -20,6 +20,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    color: DarkGreen
 }
 
 p, div{
@@ -28,21 +29,21 @@ p, div{
 }
 
 .content_background{
+    background: CadetBlue;
     margin-top: 10px;
     margin-bottom: 10px;
-    background: 86B32D;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
 }
 
 .content_space{
-    background: C9F76F;
+    background: PaleGoldenRod;
     padding: 10px 40px 10px 10px;
     border-radius: 20px;
 }
 
 .sorting_space{
-    background: C9F76F;
+    background: PaleGoldenRod;
     padding: 10px 10px 10px 20px;
     border-radius: 20px;
 }
