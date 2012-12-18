@@ -157,5 +157,6 @@ LOGGING = {
     }
 }
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+if os.environ.get('DATABASE_URL', None):
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config()

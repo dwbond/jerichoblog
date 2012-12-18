@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import permalink
 from django.forms import ModelForm
+from django.utils.safestring import mark_safe
 
 # Create your models here.
 
@@ -22,6 +23,9 @@ class Blog(models.Model):
     body = models.TextField()
     posted = models.DateField(db_index=True, auto_now_add=True)
     category = models.ManyToManyField(Category)
+
+    def display_safe_field(self):
+        return (mark_safe(self.body))
 
     def __unicode__(self):
         return '%s' % self.title
