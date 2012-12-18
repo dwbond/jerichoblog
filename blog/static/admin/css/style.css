@@ -25,11 +25,11 @@ h1, h2, h3, h4, h5, h6 {
 
 p, div{
     font-family: 'Crimson Text', Georgia, Times, serif;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .content_background{
-    background: CadetBlue;
+    background: LightSteelBlue;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px 10px 10px 10px;
@@ -37,22 +37,23 @@ p, div{
 }
 
 .content_space{
-    background: PaleGoldenRod;
+    background: LightYellow;
     padding: 10px 40px 10px 10px;
     border-radius: 20px;
 }
 
 .sorting_space{
-    background: PaleGoldenRod;
+    background: LightYellow;
     padding: 10px 10px 10px 20px;
     border-radius: 20px;
 }
 
 .blog_title{
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
     font-size: 80px;
     line-height: 50px;
     text-shadow: 1px 2px 2px #ccc;
-    margin-left: 50px;
+    margin-left: 10px;
 }
 
 .post_title{

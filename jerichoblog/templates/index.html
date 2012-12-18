@@ -2,29 +2,6 @@
 
 {# {%block head_title %} #}
 
-{% block sidebar %}
-    <h3>Monthly Archive</h3>
-    <ul>
-    {% for month in months %} <br>
-        {% ifchanged month.0 %} {{month.0}} <br> {% endifchanged %} 
-        <a href="{% url blog.views.month month.0 month.1 %}">{{ month.2 }}</a>
-    {% endfor %}
-    </ul>
-{% endblock %}
-
-{% block category %}
-    <h3>Categories</h3>
-    {% if categories %}
-        <ul>
-        {% for category in categories %}
-            <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>There are no posts.</p>
-    {% endif %}
-{% endblock %}
-
 {% load comments %}
 
 {% block content %}
@@ -34,7 +11,7 @@
         {% if posts %}
             <ul>
             {% for post in posts.object_list %}
-                <li><a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a></li>
+                <li><a href="{{ post.get_absolute_url }}"><h2>{{ post.title }}</h2></a></li>
                 <ul>
                     <div class= "time"> <h4>{{ post.posted }}</h4> </div>
                     {{ post.body|linebreaks }}
