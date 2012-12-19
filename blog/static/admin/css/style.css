@@ -79,3 +79,8 @@ p, div{
     float: right;
     margin-right: 10px;
 }
+
+.button_style{
+    float: right;
+    margin-bottom: 10px;
+}

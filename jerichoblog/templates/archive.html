@@ -1,17 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 
-{% block head_title %} Jerichoblog:{{month}}/{{year}} {% endblock %}}
+{% block head_title %} Jerichoblog- {{month}} of {{year}} {% endblock %}}
 {% block title %}
     <div class = "page-header">
-    <h1><a href="http://www.jerichoblog.com/">The Jerichoblog Archives</a>- {{month}}, in the year of our Lord {{year}}</h1>
+    <h1><a href="http://www.jerichoblog.com/">The Jerichoblog Archives</a>- {{month}} of {{year}}</h1>
     </div>
 {% endblock %}
 
-{% block content %}
-
-{% block blog_title %}
+{% block navigation %}
+<button class = "btn button_style"><a href="http://www.jerichoblog.com/">Back to Blog</a></button>
 {% endblock %}
 
-<button class = "btn"><a href="http://www.jerichoblog.com/">Back to Blog</a></button>
-
-{% endblock %}

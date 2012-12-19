@@ -49,7 +49,7 @@ def month(request, year, month):
     except (InvalidPage, EmptyPage):
         blogs = paginator.page(paginator.num_pages)
 
-    return render_to_response("index.html", {
+    return render_to_response("archive.html", {
         'user' : request.user,
         'post_list' : blogs.object_list,
         'months' : mkmonth_lst(),
