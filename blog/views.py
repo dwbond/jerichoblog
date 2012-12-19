@@ -132,7 +132,7 @@ def month_archive(request):
        'category' : category,
        'categories' : Category.obejects.all(),
        'posts': Blog.objects.filter(category=category)[:5],
-       'song_lyrics' ; sing_a_song(),
+       'song_lyrics' : sing_a_song(),
     },
     context_instance = RequestContext(request),
     )
