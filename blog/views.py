@@ -109,6 +109,7 @@ def view_category(request, slug):
     return render_to_response('view_category.html', {
         'category': category,
         'categories' : Category.objects.all(),
+        'months' : mkmonth_lst(),
         'posts': Blog.objects.filter(category=category)[:5],
         'song_lyrics' : sing_a_song(),
     },
@@ -118,9 +119,8 @@ def view_category(request, slug):
 # page for list of all categories
 def category_archive(request):
     return render_to_response('category_archive.html', {
-        'category': category,
         'categories' : Category.objects.all(),
-        'posts': Blog.objects.filter(category=category)[:5],
+        'months' : mkmonth_lst(),
         'song_lyrics' : sing_a_song(),
     },
     context_instance = RequestContext(request),
@@ -129,9 +129,8 @@ def category_archive(request):
 # page for a list of all months the blog's been around for
 def month_archive(request):
    return render_to_response('month_archive.html', {
-       'category' : category,
-       'categories' : Category.obejects.all(),
-       'posts': Blog.objects.filter(category=category)[:5],
+       'categories' : Category.objects.all(),
+       'months' : mkmonth_lst(),
        'song_lyrics' : sing_a_song(),
     },
     context_instance = RequestContext(request),

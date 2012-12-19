@@ -21,7 +21,7 @@
     <div class = "span12 content_background">
 
     {% block title %}
-    <h1><div class ="blog_title"><a href="http://www.jerichoblog.com/">Jerichoblog</a><div class= "blog_subtitle">And the Walls Came Tumbling Down</div></div></h1>
+    <h1><div class ="blog_title"><a href="{% url homepage %}">Jerichoblog</a><div class= "blog_subtitle">And the Walls Came Tumbling Down</div></div></h1>
 
     {% endblock %}
 
@@ -42,7 +42,7 @@
 
             <div class = "span3 well sorting_space">
             {% block category %}
-                <h3>Categories</h3>
+                <h3><a href="{% url view_category_list %}">Categories</a></h3>
                   {% if categories %}
                     <ul>
                     {% for category in categories %}
@@ -55,7 +55,7 @@
             {% endblock %}
 
             {% block sidebar %}
-              <h3>Monthly Archive</h3>
+              <h3><a href="{% url view_history %}">Monthly Archive</a></h3>
               <ul>
               {% for month in months %} <br>
                  {% ifchanged month.0 %} {{month.0}} <br> {% endifchanged %} 
