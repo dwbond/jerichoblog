@@ -35,11 +35,13 @@
         {% if posts.object_list and posts.paginator.num_pages > 1 %}
             <div>
                 <ul class = "pager">
-                    <li class = "previous">
                     {% if posts.has_previous %}
-                        <a href= "?page={{ posts.previous_page_number }}">&larr; Older</a>
+                    <li class = "previous">
+                        <a href= "?page={{ posts.previous_page_number }}">&larr; Newer</a></li>
+                    {% else %}
+                    <li class = "previous disabled"> 
+                        <a href= "?page={{ posts.previous_page_number }}">&larr; Newer</a></li>
                     {% endif %}
-                    </li>
                     
                     <li>
                     <span>
@@ -47,11 +49,13 @@
                     </span>
                     </li>
 
-                    <li class = "next">
                     {% if posts.has_next %}
-                        <a href= "?page={{ posts.next_page_number }}">Newer &rarr;</a>
+                    <li class = "next">
+                        <a href= "?page={{ posts.next_page_number }}">Older &rarr;</a></li>
+                    {% else %}
+                    <li class = "next disabled">
+                        <a href= "?page={{ posts.next_page_number }}">Older &rarr;</a></li>
                     {% endif %}
-                    </li>
                 </ul>
             </div>
         {% endif %}
