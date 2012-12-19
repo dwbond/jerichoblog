@@ -1,0 +1,26 @@
+Things that still need to be done:
+
+s3 for static files
+
+Fix double title postings
+
+Comments:
+    Markup
+    Email when comment made
+        set up @jerichoblog.com email
+    Redirect, thank when comment made
+    Flag comments
+    Link to comments
+    Comment preview
+
+Image capability in posts
+
+Custom 404 page
+
+Security-- environmental variables for traceback
+
+Categories, Monthly Archive slide (bootstrap JavaScript)
+
+Prettier Pagination
+
+Disable sidebar portions on relevant pages
