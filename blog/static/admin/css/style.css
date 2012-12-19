@@ -65,3 +65,8 @@ p, div{
     font-size: 40px;
     line-height: 45px;
 }
+
+.category_small{
+    float: right;
+    margin-right: 10px;
+}

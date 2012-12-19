@@ -18,7 +18,11 @@
                 </ul>
                 {% get_comment_count for post as comment_count %}
                 <small>{{ comment_count }} comment{{ comment_count|pluralize }}</small>
-            {% endfor %}
+                {% for category in post.category.all %}
+                    <span class="label category_small"> {{ category }} </span>
+                    &nbsp;
+                {% endfor %}
+        {% endfor %}
             </ul>
 
         {% else %}
