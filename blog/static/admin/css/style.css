@@ -30,8 +30,8 @@ p, div{
 
 .content_background{
     background: LightSteelBlue;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
 }
@@ -51,9 +51,18 @@ p, div{
 .blog_title{
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
     font-size: 80px;
+    padding-bottom: 20px;
     line-height: 50px;
     text-shadow: 1px 2px 2px #ccc;
     margin-left: 10px;
+}
+
+.blog_subtitle{
+    float: right;
+    margin-right: 10px;
+    color: DimGray;
+    font-size: 25px;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
 }
 
 .post_title{
