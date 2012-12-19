@@ -8,8 +8,9 @@
 
 {% load comments %}
 
-{% block content %}
 {% block blog_title %} <h2> {{ post.title }} </h2> {% endblock %}
+
+{% block content %}
     <ul>
     <h4> {{ post.posted }} </h4>
     <p>{{ post.body|linebreaks }}</p>
