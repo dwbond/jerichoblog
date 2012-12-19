@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head_title %}Jerichoblog -- Archive{% endblock %}
+{% block title %}
+<div class = "page-header">
+    <h1><a href="http://www.jerichoblog.com/">Jerichoblog</a> Archive</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+    {% if months %}
+        <ul>
+        {% for month in months %} <br>
+            {% ifchanged month.0 %} {{month.0}} <br> {% endifchanged %} 
+            <a href="{% url blog.views.month month.0 month.1 %}">{{ month.2 }}</a>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no posts.</p>
+    {% endif %}
+{% endblock %}
+
+
