@@ -51,6 +51,7 @@ def month(request, year, month):
 
     return render_to_response("archive.html", {
         'user' : request.user,
+        'categories': Category.objects.all(),
         'post_list' : blogs.object_list,
         'months' : mkmonth_lst(),
         'posts' : blogs,
@@ -91,6 +92,8 @@ def sing_a_song():
 def view_post(request, slug):
     return render_to_response('view_post.html', {
         'post': get_object_or_404(Blog, slug=slug),
+        'categories': Category.objects.all(),
+        'months' : mkmonth_lst(),
         'song_lyrics' : sing_a_song(),
     },
     context_instance = RequestContext(request),
@@ -100,6 +103,7 @@ def view_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     return render_to_response('view_category.html', {
         'category': category,
+        'categories' : Category.objects.all(),
         'posts': Blog.objects.filter(category=category)[:5],
         'song_lyrics' : sing_a_song(),
     },
