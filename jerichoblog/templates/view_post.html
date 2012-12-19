@@ -15,6 +15,11 @@
     <h4> {{ post.posted }} </h4>
     <p>{{ post.body|linebreaks }}</p>
 
+    {% for category in post.category.all %}
+        <span class = "badge"> <a href= "{{category.get_absolute_url }}">{{category}}</a></span>
+    {% endfor %}
+
+
 {% endblock %}
 
 {% block comments %}
