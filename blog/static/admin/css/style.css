@@ -75,3 +75,7 @@ p, div{
     float: right;
     margin-bottom: 10px;
 }
+
+.pagination_style{
+    background-color: gray;
+}

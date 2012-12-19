@@ -31,24 +31,25 @@
         <!-- end Posts -->
 
         <!-- Pagination -->
+        <br>
         {% if posts.object_list and posts.paginator.num_pages > 1 %}
-            <div class = "pagination pagination-centered">
-                <ul>
-                    <li>
+            <div>
+                <ul class = "pager">
+                    <li class = "previous">
                     {% if posts.has_previous %}
-                        <span><a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a></span>
+                        <a href= "?page={{ posts.previous_page_number }}">&larr; Older</a>
                     {% endif %}
                     </li>
                     
                     <li>
-                    <span class= "current">
+                    <span>
                         Page {{ posts.number }} of {{ posts.paginator.num_pages }}
                     </span>
                     </li>
 
-                    <li>
+                    <li class = "next">
                     {% if posts.has_next %}
-                        <span><a href= "?page={{ posts.next_page_number }}"> &gt;&gt; older entries</a></span>
+                        <a href= "?page={{ posts.next_page_number }}">Newer &rarr;</a>
                     {% endif %}
                     </li>
                 </ul>
