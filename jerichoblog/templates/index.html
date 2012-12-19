@@ -15,11 +15,12 @@
                 <ul>
                     <div class= "time"> <h4>{{ post.posted }}</h4> </div>
                     {{ post.body|linebreaks }}
-                </ul>
+                
                 {% get_comment_count for post as comment_count %}
                 <small>{{ comment_count }} comment{{ comment_count|pluralize }}</small>
+                </ul>
                 {% for category in post.category.all %}
-                    <span class="label category_small"> <a href= "{{ category.get_absolute_url }}">{{ category }}</a></span>
+                    <span class="badge category_small"> <a href= "{{ category.get_absolute_url }}">{{ category }}</a></span>
                 {% endfor %}
         {% endfor %}
             </ul>
