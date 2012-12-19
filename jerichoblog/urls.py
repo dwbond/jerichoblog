@@ -20,6 +20,10 @@ urlpatterns = patterns('',
 
     url(r'^archive/(\d+)/(\d+)/$', 'blog.views.month', name = 'view_blog_archive'),
 
+    url(r^'category-list/', 'blog.views.category_archive', name = 'view_category_list'),
+
+    url(r^'history/', 'blog.views.month_archive', name = 'view_history'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

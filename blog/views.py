@@ -34,6 +34,7 @@ def mkmonth_lst():
     print months
     return months
 
+# page for all the posts in a month
 def month(request, year, month):
     """Monthly archive."""
 
@@ -61,6 +62,7 @@ def month(request, year, month):
     context_instance = RequestContext(request),
     )
 
+# main page
 def index(request):
 
     blogs = Blog.objects.all().order_by("-posted")
@@ -84,11 +86,13 @@ def index(request):
     context_instance = RequestContext(request),
     )
 
+# stupid function for lyrics from "Battle of Jericho" hymn
 import random
 def sing_a_song():
     song = ["Joshua fought the battle of Jericho", "Joshua fought the battle of Jericho", "And the wall came tumbling down", "You may talk about your men of Gideon", "You may talk about your men of Saul", "But there's none like good old Joshua", "At the battle of Jericho", "Right up to the walls of Jericho", "They marched with spear in hand", "Go blow them ram horns, Joshua cried", "'Cause the battle is in my hand", "Then the lamb, ram, sheep horns began to blow", "And the trumpets began to sound", "Joshua commanded the children to shout", "That morning Joshua fought the battle of Jericho", "Joshua fought the battle of Jericho", "And the walls came tumbling down"]
     return random.choice(song)
 
+# displays post
 def view_post(request, slug):
     return render_to_response('view_post.html', {
         'post': get_object_or_404(Blog, slug=slug),
@@ -99,6 +103,7 @@ def view_post(request, slug):
     context_instance = RequestContext(request),
     )
 
+# page for a category's links
 def view_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     return render_to_response('view_category.html', {
@@ -108,4 +113,26 @@ def view_category(request, slug):
         'song_lyrics' : sing_a_song(),
     },
     context_instance = RequestContext(request),    
+    )
+
+# page for list of all categories
+def category_archive(request):
+    return render_to_response('category_archive.html', {
+        'category': category,
+        'categories' : Category.objects.all(),
+        'posts': Blog.objects.filter(category=category)[:5],
+        'song_lyrics' : sing_a_song(),
+    },
+    context_instance = RequestContext(request),
+    )
+
+# page for a list of all months the blog's been around for
+def month_archive(request):
+   return render_to_response('month_archive.html', {
+       'category' : category,
+       'categories' : Category.obejects.all(),
+       'posts': Blog.objects.filter(category=category)[:5],
+       'song_lyrics' ; sing_a_song(),
+    },
+    context_instance = RequestContext(request),
     )
