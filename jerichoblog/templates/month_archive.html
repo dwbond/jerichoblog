@@ -10,7 +10,7 @@
     {% if months %}
         <ul>
         {% for month in months %} <br>
-            <h4>{% ifchanged month.0 %} {{month.0}} <br> {% endifchanged %} </h4>
+            <h4><b>{% ifchanged month.0 %} {{month.0}} <br> {% endifchanged %} </b></h4>
             <h3><a href="{% url blog.views.month month.0 month.1 %}">{{ month.2 }}</a>
         {% endfor %}
         </ul></h3>
@@ -19,4 +19,5 @@
     {% endif %}
 {% endblock %}
 
-
+{% block sidebar %}
+{% endblock %}
